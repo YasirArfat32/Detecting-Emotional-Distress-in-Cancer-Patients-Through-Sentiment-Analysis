@@ -37,45 +37,6 @@ The analysis combines **lexicon-based, recurrent neural, and transformer-based a
 | Emotion analysis | Fear and trust were prominent in NRCLex outputs, while transformer-based emotion analysis highlighted emotions such as caring and realization. |
 | LSTM vs. BiLSTM | Both achieved 76% proxy-label accuracy; BiLSTM produced a modestly higher macro-F1 score. |
 
-## Method Overview
-
-```text
-Public Online Cancer Narratives
-            │
-            ▼
-   Data Collection & Cleaning
-            │
-            ▼
-  Sentiment / Emotion Analysis
-            │
-   ┌────────┼──────────────────────┐
-   │        │                      │
-NRCLex    VADER              DistilBERT / RoBERTa
-   │        │                      │
-   └────────┼──────────────────────┘
-            │
-            ▼
-      LSTM / BiLSTM
-            │
-            ▼
- Stage & Treatment Comparisons
-            │
-            ▼
- Statistical and Comparative Analysis
-```
-
-## Data and Reproducibility
-
-The study uses **publicly accessible online text** and does **not** use medical records, electronic health records, or clinician-restricted documentation.
-
-Because of ethical and platform-related sensitivities, the **full raw corpus is not redistributed**. The published paper states that **processed and de-identified data, code, aggregated outputs, and experimental results** supporting the study will be made available through this repository.
-
-## Important Interpretation Note
-
-This work is an **exploratory corpus-level computational study**. The cancer-stage and treatment labels are based on explicit mentions in text rather than clinically verified patient records. The sentiment and emotion results should therefore not be interpreted as diagnostic predictions, clinical assessments, or verified longitudinal patient trajectories.
-
-The LSTM and BiLSTM experiments use **VADER-derived proxy labels rather than an independently human-annotated gold standard**, so their reported metrics measure agreement with that proxy-labeling procedure rather than validated clinical or human-judgment performance.
-
 ## Citation
 
 If you use this work, please cite:
@@ -95,15 +56,3 @@ If you use this work, please cite:
 ## Paper
 
 **Discover Analytics:** https://doi.org/10.1007/s44257-026-00087-0
-
-## License and Responsible Use
-
-The published article is Open Access under the **Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)** license. Repository code and processed data should be used according to the license terms provided with the corresponding repository files.
-
-Please use the data and outputs responsibly, particularly because the underlying research concerns sensitive cancer-related narratives.
-
----
-
-### Repository View Counter
-
-The badge at the top of this README uses **hits.sh** to provide a lightweight visit counter. It counts badge requests and may include repeat visits, automated requests, or bots; it should therefore be treated as an approximate repository-view counter rather than a count of unique human visitors.
